@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    text-align: center;
+}
+.mainContainer {
+    margin: auto;
+    margin-top: 2.7rem;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas {
+    background-color: turquoise;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: khaki;
+    width: 200px;
+    height: fit-content;
+    padding: 2rem;
+}
+
+.options div {
+    margin: .2rem;
+}
+.color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+.shape-square-container {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.shape-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: .3rem;
+}

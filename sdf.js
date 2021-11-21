@@ -8,19 +8,19 @@ const circleShape = document.querySelector('.shape-circle-container');
 const lineShape = document.querySelector('.shape-line-container');
 const sizeInput = document.querySelector('.sizeInput');
 const allShapes = [squareShape, circleShape, lineShape];
-
 //setting the canvas size to window size
-
-
+canvas.width = innerContainer.clientWidth;
+canvas.height = innerContainer.clientHeight;
 
 window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = innerContainer.clientWidth;
+    canvas.height = innerContainer.clientHeight;
 })
+
 
 ctx.strokeStyle = color.value;//starting color
 ctx.lineJoin = "round";//shape 
-ctx.lineCap = "square";
+//ctx.lineCap = "square";
 ctx.lineWidth = 50;//size of pen
 //ctx.globalCompositeOperation = "multiply"; //  blend mode
 
@@ -42,13 +42,15 @@ function draw(e) { //event gives us X and Y axis
     ctx.lineTo(e.offsetX, e.offsetY);//go to where mouse is
     ctx.stroke(); //calls method to allow drawing(req)
     [lastX, lastY] = [e.offsetX, e.offsetY];// updates where mouse is
+
+
 }
 function shapeStyle(shape) {
     console.log(shape)
-    ctx.lineCap = shape;
+    ctx.lineCap = shape
 }
 document.addEventListener('click', () => {
-    color.value;
+    color.value
 })
 
 canvas.addEventListener("mousedown", (e) => { // mouse down to draw
@@ -63,18 +65,29 @@ canvas.addEventListener("mousedown", (e) => { // mouse down to draw
     })
 })()
 
-function adjustSize (e) {
-    console.log(e.target.value)
-    ctx.lineWidth = e.target.value;
+sizeInput.addEventListener('change', (e) => {ctx.lineWidth = e.target.value})
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("mouseout", () => isDrawing = false);
+
+function draw(e) { //event gives us X and Y axis
+    if (!isDrawing) return; //stops when not mouse is down otherwise =>
+    ctx.strokeStyle = color.value;// sets hue, saturation, lightness
+    ctx.beginPath(); //starts the drawing
+    ctx.moveTo(lastX, lastY); // start from
+    ctx.lineTo(e.offsetX, e.offsetY);//go to where mouse is
+    ctx.stroke(); //calls method to allow drawing(req)
+    [lastX, lastY] = [e.offsetX, e.offsetY];// updates where mouse is
+
+    hue++; //increments the hue to go through range of spectrum
+    if (hue >= 360) {
+        hue = 0; //resets hue
+    }
 }
-
-sizeInput.addEventListener('input', (e) => adjustSize(e))
-
 canvas.addEventListener("mousedown", (e) => { // mouse down to draw
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY]; //updates the x and y istead of starting at (0, 0)
 });
-
 
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", () => isDrawing = false);

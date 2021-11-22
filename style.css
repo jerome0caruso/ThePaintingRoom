@@ -57,10 +57,16 @@ img {
 }
 .navBar .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 .navBar .logo {
     font-size: 1.7rem;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.nav {
+    margin-left: auto;
 }
 .navBar .nav {
     display: flex;
@@ -81,6 +87,12 @@ img {
 }
 .hideNav {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.hideNav2 {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }

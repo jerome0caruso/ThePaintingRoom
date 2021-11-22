@@ -43,23 +43,30 @@ h2 {
     background-color: khaki;
     width: fit-content;
     height: fit-content;
-    margin: 0;
-    margin-left: auto;
+    margin: auto;
 }
 
 .options div {
     margin: .8rem;
+    margin-bottom: .1rem;
 }
 .color {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: fit-content;
+    cursor: pointer;
 }
 .shape-square-container, .shape-circle-container, .shape-line-container {
+    text-align: center;
     height: fit-content;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    cursor: pointer;
+}
+
+.shape-square:hover {
+    background-color: white;
 }
 .shape-square {
     display: flex;
@@ -68,12 +75,15 @@ h2 {
     border: 1px solid black;
     padding: .3rem;
 }
-.draw-circle {
+.draw-circle, .draw-square, .clear {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     padding: .3rem;
+}
+
+.draw-circle:hover, .draw-square:hover, .clear:hover {
     background-color: white;
 }
 

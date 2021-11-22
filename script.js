@@ -7,6 +7,8 @@ const squareShape = document.querySelector('.shape-square-container');
 const circleShape = document.querySelector('.shape-circle-container');
 const lineShape = document.querySelector('.shape-line-container');
 const drawCircleBtn = document.querySelector('.draw-circle');
+const drawSquareBtn = document.querySelector('.draw-square');
+const clearBtn = document.querySelector('.clear')
 const sizeInput = document.querySelector('.sizeInput');
 const allShapes = [squareShape, circleShape, lineShape];
 let size = 50;
@@ -31,13 +33,14 @@ ctx.lineWidth = size;//size of pen
 let isDrawing = false;// to determine when mouse is (clicked)down
 let direction = true;
 let createCircle = false;
+let createSquare = false;
 //postions
 let lastX = 0;
 let lastY = 0;
 
 //draw, mouse and click fn
 function draw(e) { //event gives us X and Y axis
-    if (!isDrawing || createCircle) return; //stops when not mouse is down otherwise =>
+    if (!isDrawing || createCircle || createSquare) return; //stops when not mouse is down otherwise =>
     ctx.strokeStyle = color.value;// sets hue, saturation, lightness
     ctx.beginPath(); //starts the drawing
     ctx.moveTo(lastX, lastY); // start from
@@ -46,9 +49,15 @@ function draw(e) { //event gives us X and Y axis
     [lastX, lastY] = [e.offsetX, e.offsetY];// updates where mouse is
 }
 
+//set flags for drawing shapes
+function setDrawShapes(circle, square) {
+    createCircle = circle;
+    createSquare = square;
+}
+
 //creates the shape
 function shapeStyle(shape) {
-    createCircle = false;
+    setDrawShapes(false, false, false);
     ctx.lineCap = shape;
 }
 
@@ -64,6 +73,18 @@ function drawCircle() {
         ctx.arc(circle.x, circle.y, circle.size, 0, Math.PI * 2);
         ctx.fillStyle = color.value;
         ctx.fill();
+    }
+}
+//create square
+function drawSquare() {
+    if(createSquare) {
+        square = {
+            x: lastX,
+            y: lastY,
+            size: size
+        }
+        ctx.fillStyle = color.value;
+        ctx.fillRect(square.x - (size / 2), square.y - (size / 2), square.size, square.size)
     }
 }
 
@@ -91,7 +112,15 @@ canvas.addEventListener("mousedown", (e) => { // mouse down to draw
 document.addEventListener('click', () => color.value);
 sizeInput.addEventListener('input', (e) => adjustSize(e))
 canvas.addEventListener("mousemove", draw);
-canvas.addEventListener('click', drawCircle);
 canvas.addEventListener("mouseup", () => isDrawing = false);
 canvas.addEventListener("mouseout", () => isDrawing = false);   
-drawCircleBtn.addEventListener('click', () => createCircle = true);
+drawCircleBtn.addEventListener('click', () => setDrawShapes(true, false));
+drawSquareBtn.addEventListener('click', () => setDrawShapes(false, true));
+clearBtn.addEventListener('click', () => {
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height)});
+canvas.addEventListener('click', () => {
+    drawCircle();
+    drawSquare();
+});
+

@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
 }
 h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
     color: var(--primary-color);
 }
 
@@ -59,7 +59,7 @@ img {
     grid-template-columns: 1fr 1fr;
 }
 .navBar .logo {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .navBar .nav {
     display: flex;
@@ -83,6 +83,15 @@ img {
     justify-content: flex-end;
     align-items: center;
 }
+.is-selected1 {
+    color: rgb(181, 212, 185);
+}
+.is-selected2 {
+    color: rgb(226, 87, 99);
+}
+.is-selected3 {
+    color: rgb(85, 73, 2);
+}
 .link1 {
     color: white;
     background-color: red;
@@ -95,9 +104,15 @@ img {
     color: white;
     background-color: rgb(207, 195, 18);
 }
+.link4 {
+    color: white;
+    background-color: rgb(38, 114, 42);
+}
+
 
 .section-1 {
     margin: 2rem 0;
+    height: 78vh;
 }
 
 .section-1 .container {
@@ -110,6 +125,7 @@ img {
 
 .section-1 p {
     margin: 1rem;
+    margin-left: 0;
 }
 
 .btn {
@@ -121,6 +137,7 @@ img {
     border: none;
     border-radius: 3rem;
     cursor: pointer;
+    margin-top: 1.5rem;
 }
 .btn:hover {
     background-color: var(--secondary-color);

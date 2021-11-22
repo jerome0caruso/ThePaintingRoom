@@ -35,15 +35,16 @@ h2 {
 }
 
 #canvas {
-    background-color: turquoise;
+    background-color: rgb(163, 140, 167);
 }
 
 .options {
     display: flex;
-    background-color: khaki;
+    background-color: rgb(235, 218, 240);
     width: fit-content;
     height: fit-content;
     margin: auto;
+    border: 1px solid black
 }
 
 .options div {
@@ -57,7 +58,7 @@ h2 {
     height: fit-content;
     cursor: pointer;
 }
-.shape-square-container, .shape-circle-container, .shape-line-container {
+.shape-square-container, .shape-circle-container, .shape-line-container, .shape-size-container {
     text-align: center;
     height: fit-content;
     margin: 0 auto;
@@ -73,7 +74,7 @@ h2 {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    padding: .3rem;
+    padding: .0rem;
 }
 .draw-circle, .draw-square, .clear {
     display: flex;

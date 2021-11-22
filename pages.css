@@ -1,4 +1,6 @@
 .contactContainer {
+    margin: 8rem auto;
+    max-width: 1200px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -6,4 +8,22 @@
 .pic {
     width: 350px;
     height: 350px;
+}
+
+.pictureContainer {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 3rem;
+}
+.pictureContainer img {
+    border-radius: 50%;
+}
+
+.aboutContainer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    color: white;
+}
+.infoTable {
+    margin-top: 2rem;
+    text-align: center;
 }

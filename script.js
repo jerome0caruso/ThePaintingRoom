@@ -10,7 +10,8 @@ const sizeInput = document.querySelector('.sizeInput');
 const allShapes = [squareShape, circleShape, lineShape];
 
 //setting the canvas size to window size
-
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 
 window.addEventListener("resize", () => {

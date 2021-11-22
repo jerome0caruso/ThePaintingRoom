@@ -6,43 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paint</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"/>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="paint.css">
 </head>
 <body>
+    <nav class="navBar">
+        <div class="container">
+            <h1 class="logo">< The Painting Room > </h1>
+            <div class="hideNav">
+                <ul class="nav">
+                    <li><a class="link4" href="index.html">Home</a></li>
+                    <li><a class="link1" href="paint.html">Paint</a></li>
+                    <li><a class="link2" href="about.html">About</a></li>
+                    <li><a class="link3" href="contact.html"><span class="is-selected3">Contact</span></a></li>
+                </ul>
+                <section class="options">
+                    <div class="color">
+                        <p>color</p>
+                        <input class="colorPicker" type="color" name="color1" value="#000000">
+                    </div>
+                    <div class="">
+                        <p>size</p>
+                        <div class="shape-square">
+                            <input class="sizeInput" size=7></input>
+                        </div>
+                    </div>
+                    <div data-key='square' class="shape-square-container">
+                        <p>square</p>
+                        <div class="shape-square">
+                            <i class="fas fa-square-full"></i>
+                        </div>
+                    </div>
+                    <div data-key='round' class="shape-circle-container" >
+                        <p>circle</p>
+                        <div class="shape-square">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div data-key='butt' class="shape-line-container">
+                        <p>line</p>
+                        <div class="shape-square">
+                            <i class="fas fa-slash"></i>
+                        </div>
+                    </div>
+                    <div class="shape-line-container">
+                        <p>draw circle</p>
+                        <div class="draw-circle">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div class="shape-line-container">
+                        <p>draw square</p>
+                        <div class="draw-circle">
+                            <i class="fas fa-square-full"></i>
+                        </div>
+                    </div>
+                    <div class="shape-line-container">
+                        <p>draw triangle</p>
+                        <div class="draw-circle">
+                            <i class="fas fa-caret-square-up"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="showMobile">
+                <i class="fa fa-bars hambar"></i>
+            </div>
+        </div>
+    </nav>
     <div class="mainContainer">
         <div class="innerContainer">
             <canvas class="canvas" id="canvas"></canvas>
-            <section class="options">
-                <div class="color">
-                    <p>color</p>
-                    <input class="colorPicker" type="color" name="color1" value="#000000">
-                </div>
-                <div class="">
-                    <p>size</p>
-                    <div class="shape-square">
-                        <input class="sizeInput" size=7></input>
-                    </div>
-                </div>
-                <div data-key='square' class="shape-square-container">
-                    <p>square</p>
-                    <div class="shape-square">
-                        <i class="fas fa-square-full"></i>
-                    </div>
-                </div>
-                <div data-key='round' class="shape-circle-container" >
-                    <p>circle</p>
-                    <div class="shape-square">
-                        <i class="fas fa-circle"></i>
-                    </div>
-                </div>
-                <div data-key='butt' class="shape-line-container">
-                    <p>line</p>
-                    <div class="shape-square">
-                        <i class="fas fa-slash"></i>
-                    </div>
-                </div>
-
-            </section>
         </div>
     </div>
    

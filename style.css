@@ -19,6 +19,7 @@ body {
     font-size: 1.2rem;
     color: var(--third-color-color);
     margin-top: 1rem;
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,7 +113,7 @@ img {
 
 .section-1 {
     margin: 2rem 0;
-    height: 78vh;
+    height: calc(100vh - 120px);
 }
 
 .section-1 .container {
@@ -164,6 +165,7 @@ img {
     max-width: 850px;
     padding: 5rem 0 ;
 }
+
 .section-2-inner h2 { 
     font-size: 2rem;
     margin-top: 1rem;
@@ -271,6 +273,9 @@ img {
 }
 .post {
     margin-right: 1.8rem;
+}
+.showMobile {
+    display: none;
 }
 
 @media(max-width: 975px) {

@@ -40,7 +40,6 @@ let lastY = 0;
 
 //draw, mouse and click fn
 function draw(e) { //event gives us X and Y axis
-    console.log(e.offsetX, e.offsetY)
     if (!isDrawing || createCircle || createSquare) return; //stops when not mouse is down otherwise =>
     ctx.strokeStyle = color.value;// sets hue, saturation, lightness
     ctx.beginPath(); //starts the drawing
@@ -58,6 +57,7 @@ function setDrawShapes(circle, square) {
 
 //creates the shape
 function shapeStyle(shape) {
+    console.log(shape)
     setDrawShapes(false, false, false);
     ctx.lineCap = shape;
 }
@@ -128,3 +128,22 @@ canvas.addEventListener('click', () => {
 
 
 //nav 
+canvas.addEventListener("touchmove", function (e) {
+    document.body.classList.add("stop-scrolling");
+    window.scrollBy(0,1);
+
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousemove", {
+      clientX: touch.clientX ,
+      clientY: touch.clientY - 105
+    });
+    ctx.strokeStyle = color.value;// sets hue, saturation, lightness
+    ctx.beginPath(); //starts the drawing
+    ctx.moveTo(mouseEvent.clientX, mouseEvent.clientY); // start from
+    ctx.lineTo(mouseEvent.clientX , mouseEvent.clientY);//go to where mouse is
+    ctx.stroke(); //calls method to allow drawing(req)
+    canvas.dispatchEvent(mouseEvent);
+  }, false);
+
+  canvas.addEventListener("touchend", () => document.body.classList.remove("stop-scrolling"))
+  

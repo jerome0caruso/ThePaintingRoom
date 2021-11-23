@@ -88,7 +88,13 @@ h2 {
 .draw-circle:hover, .draw-square:hover, .clear:hover {
     background-color: white;
 }
-
+.hidden {
+    display: none;
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
 @media only screen and (max-width: 1000px){
     .options {
         flex-wrap: wrap;
@@ -101,5 +107,8 @@ h2 {
     }
     .innerContainer {
         width: 100%;
+    }
+    .shape-line-container {
+        display: none;
     }
 }

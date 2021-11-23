@@ -19,10 +19,6 @@ body {
     font-size: 1.2rem;
     color: var(--third-color-color);
     height: 100vh;
-    background-image: url('images/colorbg.jpg');
-    background-repeat: no-repeat;
-
-    background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,19 +48,20 @@ img {
     margin: 2rem auto;
     padding: 1rem 2rem;
     overflow: hidden;
-    background-color: rgb(213, 230, 217);
+    
 }
 
 .navBar {
     font-size: 1.2rem;
     padding: 0.3rem 0;
+    background-color: rgb(161, 196, 154);
 }
 .navBar .container {
     display: grid;
     grid-template-columns: 1fr;
 }
 .navBar .logo {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     margin-right: auto;
     display: inline-block;
 }
@@ -93,6 +90,8 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 1.5rem 0 2rem 1.5rem;
+    width: 95%;
 }
 .hideNav2 {
     display: flex;
@@ -128,8 +127,11 @@ img {
 
 
 .section-1 {
-    margin: 12rem 0;
-    height: calc(100vh - 430px);
+    margin: 2rem 0 0 0;
+    height: calc(100vh - 140px);
+    background-color: rgb(161, 196, 154);
+    padding-top: 1.4rem;
+    margin-bottom: 2rem;
 }
 
 .section-1 .container {
@@ -138,6 +140,7 @@ img {
     grid-gap: 3rem;
     align-items: center;
     justify-content: center;
+    border: 6px solid rgb(23, 77, 23);
 }
 
 .section-1 p {
@@ -159,18 +162,20 @@ img {
 .btn:hover {
     background-color: var(--secondary-color);
 }
-
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .section-2 {
     position: relative;
     background-image:  linear-gradient( rgba(24, 207, 18, 0.2) 10%,rgba(164, 201, 155, 0.2) 100%), url('./images/paingbg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 425px;
+    height: fit-content;
 }
 
 .section-2-inner {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -192,6 +197,9 @@ img {
 .section-2-inner p { 
     font-size: 1.5rem;
     margin-top: 1rem;
+
+    padding: 3.2rem 0;
+    color: white;
 }
 .section-3 {
     padding: 2rem 0;
@@ -298,13 +306,15 @@ img {
     body {
         margin-top: 0;
     }
+    .section-1 {
+        height: fit-content;
+    }
     .section-1 .container {
         grid-template-columns: 1fr;
         text-align: center;
+        height: fit-content;
     }
-    .section-1 .container img {
-        display: none;
-    }
+
     .section-1 .container div:first-child {
         order: 2;
     }
@@ -351,16 +361,22 @@ img {
         width: 100%;
     }
     h1 {
-        font-size: 3.3rem;
+        font-size: 2.3rem;
         color: var(--primary-color);
         background-color: rgba(255, 255, 255,.7);
+    }
+    .titleMobile {
+        display: flex;
+
     }
     .navBar .logo {
         margin-top: 1rem;
         font-size: 1.5rem;
     }
     .section-2-inner {
-        padding: 3.2rem 0 ;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 3.2rem 0;
+        color: white;
     }
     .works {
         width:50%;

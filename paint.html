@@ -11,8 +11,11 @@
 </head>
 <body>
     <nav class="navBar">
-        <div class="container">
+        <div class="navContainer">
             <div class="hideNav2">
+                <div class="showMobile">
+                    <i class="fa fa-bars hambar"></i>
+                </div>
                 <ul class="nav">
                     <li><a class="link4" href="index.html">Home</a></li>
                     <li><a class="link1" href="paint.html">Paint</a></li>
@@ -68,12 +71,15 @@
                     </div>
                 </section>
             </div>
-
-            <div class="showMobile">
-                <i class="fa fa-bars hambar"></i>
-            </div>
         </div>
     </nav>
+    <div class="mobileLinks hidden">
+        <ul>
+            <li class="portfolio-linkM"><a href="index.html">Home</a></li>
+            <li class="aboutMe-linkM"><a href="about.html">About Me</a></li>
+            <li class="contactMe-linkM"><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </div>
     <div class="mainContainer">
         <div class="innerContainer">
             <canvas class="canvas" id="canvas"></canvas>
@@ -81,5 +87,6 @@
     </div>
    
     <script src="script.js"></script>
+    <script src="navScript.js"></script>
 </body>
 </html>

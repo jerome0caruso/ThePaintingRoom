@@ -45,10 +45,9 @@ img {
 
 .container {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 9rem auto;
     padding: 1rem 2rem;
     overflow: hidden;
-    
 }
 
 .navBar {
@@ -98,6 +97,24 @@ img {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    padding: 1rem;
+}
+
+.mobileLinks {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.hidden {
+    display: none;
+}
+.mobileLinks li {
+    cursor: pointer;
+}
+.mobileLinks li:hover {
+    background-color: black;
+    color: white;
 }
 .is-selected1 {
     color: rgb(181, 212, 185);
@@ -128,7 +145,7 @@ img {
 
 .section-1 {
     margin: 2rem 0 0 0;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 168px);
     background-color: rgb(161, 196, 154);
     padding-top: 1.4rem;
     margin-bottom: 2rem;
@@ -365,6 +382,10 @@ img {
         color: var(--primary-color);
         background-color: rgba(255, 255, 255,.7);
     }
+    h5 {
+        padding-left: 1rem;
+        font-size: 1.4rem;
+    }
     .titleMobile {
         display: flex;
 
@@ -393,6 +414,12 @@ img {
     }
     .fa-bars::before {
         display: inline-block;
+        margin-left: auto;
+    }
+    .fa-bars {
+        margin-left: auto;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
     }
     .section-3 .gallery {
         margin: 2rem;

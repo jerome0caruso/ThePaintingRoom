@@ -40,6 +40,7 @@ let lastY = 0;
 
 //draw, mouse and click fn
 function draw(e) { //event gives us X and Y axis
+    console.log(e.offsetX, e.offsetY)
     if (!isDrawing || createCircle || createSquare) return; //stops when not mouse is down otherwise =>
     ctx.strokeStyle = color.value;// sets hue, saturation, lightness
     ctx.beginPath(); //starts the drawing
@@ -124,3 +125,6 @@ canvas.addEventListener('click', () => {
     drawSquare();
 });
 
+
+
+//nav 

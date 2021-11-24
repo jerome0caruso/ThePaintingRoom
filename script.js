@@ -14,10 +14,6 @@ const allShapes = [squareShape, circleShape, lineShape];
 let size = 50;
 let circle = {}
 
-(function getResolution() {
-    console.log(screen.width, "herer")
-    console.log(screen.height)
-})()
 
 //checking screen res
 

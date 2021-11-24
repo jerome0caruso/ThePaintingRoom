@@ -169,7 +169,10 @@ img {
 }
 .smallRes {
     height: 100vh;
-    margin-top: 2rem;
+}
+.smallResM {
+    margin-top: 3rem;
+    width: 70%;
 }
 .section-1 p {
     margin: 1rem;

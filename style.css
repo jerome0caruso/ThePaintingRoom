@@ -29,18 +29,16 @@ h1 {
     color: var(--primary-color);
 }
 
-a {
+a, a:link, a:visited, a:active {
     color: var(--secondary-color);
     text-decoration: none;
     cursor: inherit;
-}
-a:visited {
-    color: white;
-}
-
-.readMe {
     color: white;
     cursor: pointer;
+}
+
+.readMe:hover {
+    color: rgb(132, 151, 93); 
 }
 
 ul {

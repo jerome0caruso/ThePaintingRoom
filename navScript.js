@@ -9,4 +9,3 @@ function getNav() {
 navBtn.addEventListener('click', getNav);
 document.addEventListener("scroll", () => mobileLinks.classList.add("hidden"))
 window.addEventListener('resize', () => mobileLinks.classList.add("hidden"))
-console.log(navBtn, "shiteaters")

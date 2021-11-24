@@ -167,7 +167,10 @@ img {
     justify-content: center;
     border: 6px solid rgb(23, 77, 23);
 }
-
+.smallRes {
+    height: 100vh;
+    margin-top: 2rem;
+}
 .section-1 p {
     margin: 1rem;
     margin-left: 0;
